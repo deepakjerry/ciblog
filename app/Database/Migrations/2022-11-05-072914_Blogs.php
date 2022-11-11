@@ -24,6 +24,10 @@ class Blogs extends Migration
                 'type' => 'TEXT',
                 'null' => true,
             ],
+            'blog_feature_image' => [
+                'type' => 'TEXT',
+                'null' => true,
+            ],
         ]);
          $this->forge->addKey('blog_id', true);
         $this->forge->createTable('Blogs');

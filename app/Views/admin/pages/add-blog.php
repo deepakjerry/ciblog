@@ -1,61 +1,85 @@
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+
+<script>tinymce.init({selector:'textarea'});</script>
 <div class="dashboard-wrapper">
       <div class="container-fluid  dashboard-content">
             <div class="card-body">
                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                 <div class="section-block" id="basicform">
-                  <h3 class="section-title">Add New Blog</h3>
+                  <h3 class="section-title"></h3>
                  
                 </div>
                 <div class="card mb-5 shadow-sm">
-                  <h5 class="card-header">Basic Form</h5>
+                  <h3 class="card-header">Add New Blog</h3>
                   <div class="card-body">
-                    <form>
+                    <form action="<?= base_url()?>/admin/addblogdata" method="post"  enctype="multipart/form-data">
+                      <?= csrf_field() ?>
                       <div class="form-group">
-                        <label for="inputText3" class="col-form-label">Input Text</label>
-                        <input id="inputText3" type="text" class="form-control">
-                      </div>
-                      <div class="form-group">
-                        <label for="inputEmail">Email address</label>
-                        <input id="inputEmail" type="email" placeholder="name@example.com" class="form-control">
-                        <p>We'll never share your email with anyone else.</p>
+                        <label for="inputText3" class="col-form-label">Blog Title</label>
+                        <input id="inputText3" type="text" name="blog_title" class="form-control">
                       </div>
                       <div class="form-group">
-                        <label for="inputText4" class="col-form-label">Number Input</label>
-                        <input id="inputText4" type="number" class="form-control" placeholder="Numbers">
+                        <label for="input-select">Select Category</label>
+
+                          <select class="form-control" name="blog_category" id="input-select">
+                          <option value="Uncategory">Uncategory</option>
+                          <option value="Travel">Travel</option>
+                          <option value="Bollwood">Bollwood</option>
+                          <option value="International News">International News</option>
+                          <option value="Cricket">Cricket</option>
+                          <option value="Bussiness">Bussiness</option>
+                        </select>
                       </div>
                       <div class="form-group">
-                        <label for="inputPassword">Password</label>
-                        <input id="inputPassword" type="password" placeholder="Password" class="form-control">
+                        <label for="exampleFormControlTextarea1">Blog textarea</label>
+                        <textarea class="form-control" name="blog_description" id="exampleFormControlTextarea1" rows="3"></textarea>
                       </div>
-                      <div class="custom-file mb-3">
-                        <input type="file" class="custom-file-input" id="customFile">
-                        <label class="custom-file-label" for="customFile">File Input</label>
-                      </div>
-                      <div class="form-group">
-                        <label for="exampleFormControlTextarea1">Example textarea</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                      </div>
-                    </form>
-                  </div>
-                  <div class="card-body border-top">
-                    <h3>Sizing</h3>
-                    <form>
-                      <div class="form-group">
-                        <label for="inputSmall" class="col-form-label">Small</label>
-                        <input id="inputSmall" type="text" value=".form-control-sm" class="form-control form-control-sm">
-                      </div>
-                      <div class="form-group">
-                        <label for="inputDefault" class="col-form-label">Default</label>
-                        <input id="inputDefault" type="text" value="Default input" class="form-control">
-                      </div>
-                      <div class="form-group">
-                        <label for="inputLarge" class="col-form-label">Large</label>
-                        <input id="inputLarge" type="text" value=".form-control-lg" class="form-control form-control-lg">
-                      </div>
-                    </form>
-                  </div>
+                      <div class="mb-3">
+                     <label class="form-label"  >Feature Image</label>
+                    <input  type="file" class="form-control "   name="file" id="file" accept=".png, .jpg, .jpeg"  />
+                 
+                  
                 </div>
+                      <div class="card-body border-top">
+                    
+                      <h5>Post Status</h5>
+                      <label class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" name="radio-inline" checked="" class="custom-control-input"><span class="custom-control-label">Publish</span>
+                      </label>
+                      <label class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" name="radio-inline" class="custom-control-input"><span class="custom-control-label">Draft</span>
+                      </label>
+                      
+                    
+                  </div>
+                      
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                         <input type="submit" value="Add Category" class="btn btn-primary">
+                      </div>
+                    </form>
+
+                  </div>
+                  </div>
               </div>
                   </div>
       </div>
 </div>
+
+<script>
+    $(document).ready(function() {
+        $('#summernote').summernote();
+    });
+
+
+
+    var loadFile = function(event) {
+    var image = document.getElementById('output');
+    image.src = URL.createObjectURL(event.target.files[0]);
+};
+
+  </script>
+
+<!-- include summernote css/js -->
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>

@@ -37,9 +37,15 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/', 'FrontendController::index');
 $routes->get('/blog', 'FrontendController::blog');
+
+
+
+/*Admin Controller start here*/
 $routes->get('/admin/dashboard', 'AdminController::adminIndex');
-$routes->get('/admin/blog', 'BlogController::BlogList');
+$routes->get('/admin/blog-list', 'BlogController::BlogList');
 $routes->get('/admin/add-blog', 'BlogController::AddBlog');
+$routes->get('/admin/blog-category', 'BlogController::CategoryBlog');
+$routes->post('/admin/addblogdata', 'BlogController::addblogdata');
 
 /*
  * --------------------------------------------------------------------

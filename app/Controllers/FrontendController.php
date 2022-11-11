@@ -14,5 +14,13 @@ class FrontendController extends BaseController
       echo view('frontend/layout/footer');
         
     }
+        public function blog()
+    {
+        echo view('frontend/layout/header');
+        echo view('frontend/blog');
+        echo view('frontend/layout/footer');
+    }
+   
+     
    
 }

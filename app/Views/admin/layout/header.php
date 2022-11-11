@@ -180,49 +180,23 @@
               <li class="nav-item ">
                 <a class="nav-link active" href="#" aria-expanded="false"
                   data-target="#submenu-1" aria-controls="submenu-1"><i class="fa fa-fw fa-user-circle"></i>Dashboard
-                  <span class="badge badge-success">6</span></a>
+                  </a>
                 
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-2"
-                  aria-controls="submenu-2"><i class="fa fa-fw fa-rocket"></i>UI Elements</a>
-                <div id="submenu-2" class="collapse submenu">
-                  <ul class="nav flex-column">
-                    <li class="nav-item">
-                      <a class="nav-link" href="pages/cards.html">Cards <span
-                          class="badge badge-secondary">New</span></a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="pages/general.html">General</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="pages/carousel.html">Carousel</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="pages/listgroup.html">List Group</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="pages/typography.html">Typography</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="pages/accordions.html">Accordions</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="pages/tabs.html">Tabs</a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
+              
               <li class="nav-item">
                 <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-3"
                   aria-controls="submenu-3"><i class="fas fa-fw fa-chart-pie"></i>Blog Managment</a>
                 <div id="submenu-3" class="collapse submenu">
                   <ul class="nav flex-column">
                     <li class="nav-item">
-                      <a class="nav-link" href="<?=  base_url()?>/admin/blog">Blog List</a>
+                      <a class="nav-link" href="<?=  base_url()?>/admin/blog-list">Blog List</a>
+                    </li>
+                     <li class="nav-item">
+                      <a class="nav-link" href="<?=  base_url()?>/admin/add-blog">Add Blog</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="pages/chart-chartist.html">Category</a>
+                      <a class="nav-link" href="<?= base_url() ?>/admin/blog-category">Category</a>
                     </li>
                    
                   </ul>

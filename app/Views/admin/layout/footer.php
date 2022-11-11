@@ -4,9 +4,9 @@
       <div class="footer">
         <div class="container-fluid">
           <div class="row">
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
-              2018 © Influence - Designed and Developed by<a href="https://themeforest.net/user/jitu/portfolio"
-                target="_blank" class="ml-1">Jituchuahan</a>.
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 d-flex justify-content-center">
+              2022 © Influence - Designed and Developed by<a href="#"
+                target="_blank" class="ml-1">Sterco</a>.
             </div>
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
               <div class="text-md-right footer-links d-none d-sm-block">
@@ -82,12 +82,6 @@
 
   <!-- clipboard -->
   <script src="../../../../cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.12/clipboard.min.js"></script>
-
-
-
-
-
-
 
   <!-- Theme JS -->
   <script src="<?=base_url()?>/admin/assets/js/theme.min.js"></script>

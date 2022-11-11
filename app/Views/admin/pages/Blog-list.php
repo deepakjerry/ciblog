@@ -12,19 +12,11 @@
           <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
             <div class="page-header1">
               <div class="page-breadcrumb" style="display: flex;justify-content: space-between;align-items: flex-start;">
-              <h2 class="pageheader-title">Blog Managment</h2>
-             <button type="button" style="display:flex" class="btn btn-primary">Add Blog</button>
+              <h2 class="pageheader-title"></h2>
+             <a  style="display:flex" class="btn btn-primary"  href="<?= base_url(); ?>/admin/add-blog">Add Blog</a>
+
            </div>
            </div>
-              <div class="page-breadcrumb">
-                <nav aria-label="breadcrumb">
-                  <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
-                    <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Tables</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Data Tables</li>
-                  </ol>
-                </nav>
-              </div>
             </div>
           
         </div>
@@ -37,120 +29,47 @@
           <!-- ============================================================== -->
           <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
             <div class="card shadow-sm mb-5">
-              <h5 class="card-header">Basic Table</h5>
+              <h3 class="card-header">Blog Managment</h3>
+           
               <div class="card-body">
                 <div class="table-responsive">
                   <table class="table table-striped table-bordered first">
                     <thead>
+                      
                       <tr>
-                        <th>Name</th>
-                        <th>Position</th>
-                        <th>Office</th>
-                        <th>Age</th>
-                        <th>Start date</th>
-                        <th>Salary</th>
+                        <th>SN#</th>
+                        <th>Blog Title</th>
+                        <th>Content</th>
+                        <th>Category</th>
+                        <th>Created Date</th>
+                        <th>Action</th>
                       </tr>
                     </thead>
                     <tbody>
+                      <?php if($blogs): $i=1;?>
+                        <?php foreach($blogs as $user): ?>
                       <tr>
-                        <td>Tiger Nixon</td>
-                        <td>System Architect</td>
-                        <td>Edinburgh</td>
-                        <td>61</td>
+                        <td><?php echo $i++; ?></td>
+                        <td><?php echo mb_strimwidth($user['blog_title'], 0, 35, '...'); ?></td>
+                        <td><?php echo mb_strimwidth($user['blog_description'], 0, 35, '...'); ?></td>
+                        <td><?php echo $user['blog_category']; ?></td>
                         <td>2011/04/25</td>
-                        <td>$320,800</td>
+                        <td><a class="btn btn-primary" href="#" role="button">Edit</a>
+                  <a class="btn btn-warning" href="#" role="button">View</a>
+                  <a class="btn btn-danger" href="#" role="button">Delete</a></td>
                       </tr>
-                      <tr>
-                        <td>Garrett Winters</td>
-                        <td>Accountant</td>
-                        <td>Tokyo</td>
-                        <td>63</td>
-                        <td>2011/07/25</td>
-                        <td>$170,750</td>
-                      </tr>
+                      <?php endforeach; ?>
+                      <?php endif; ?>
                       
-                      <tr>
-                        <td>Angelica Ramos</td>
-                        <td>Chief Executive Officer (CEO)</td>
-                        <td>London</td>
-                        <td>47</td>
-                        <td>2009/10/09</td>
-                        <td>$1,200,000</td>
-                      </tr>
-                      <tr>
-                        <td>Gavin Joyce</td>
-                        <td>Developer</td>
-                        <td>Edinburgh</td>
-                        <td>42</td>
-                        <td>2010/12/22</td>
-                        <td>$92,575</td>
-                      </tr>
-                      <tr>
-                        <td>Jennifer Chang</td>
-                        <td>Regional Director</td>
-                        <td>Singapore</td>
-                        <td>28</td>
-                        <td>2010/11/14</td>
-                        <td>$357,650</td>
-                      </tr>
-                      
-                      <tr>
-                        <td>Hermione Butler</td>
-                        <td>Regional Director</td>
-                        <td>London</td>
-                        <td>47</td>
-                        <td>2011/03/21</td>
-                        <td>$356,250</td>
-                      </tr>
-                      <tr>
-                        <td>Lael Greer</td>
-                        <td>Systems Administrator</td>
-                        <td>London</td>
-                        <td>21</td>
-                        <td>2009/02/27</td>
-                        <td>$103,500</td>
-                      </tr>
-                      <tr>
-                        <td>Jonas Alexander</td>
-                        <td>Developer</td>
-                        <td>San Francisco</td>
-                        <td>30</td>
-                        <td>2010/07/14</td>
-                        <td>$86,500</td>
-                      </tr>
-                      <tr>
-                        <td>Shad Decker</td>
-                        <td>Regional Director</td>
-                        <td>Edinburgh</td>
-                        <td>51</td>
-                        <td>2008/11/13</td>
-                        <td>$183,000</td>
-                      </tr>
-                      <tr>
-                        <td>Michael Bruce</td>
-                        <td>Javascript Developer</td>
-                        <td>Singapore</td>
-                        <td>29</td>
-                        <td>2011/06/27</td>
-                        <td>$183,000</td>
-                      </tr>
-                      <tr>
-                        <td>Donna Snider</td>
-                        <td>Customer Support</td>
-                        <td>New York</td>
-                        <td>27</td>
-                        <td>2011/01/25</td>
-                        <td>$112,000</td>
-                      </tr>
                     </tbody>
                     <tfoot>
                       <tr>
-                        <th>Name</th>
-                        <th>Position</th>
-                        <th>Office</th>
-                        <th>Age</th>
-                        <th>Start date</th>
-                        <th>Salary</th>
+                        <th>SN#</th>
+                        <th>Blog Title</th>
+                        <th>Content</th>
+                        <th>Category</th>
+                        <th>Created Date</th>
+                        <th>Action</th>
                       </tr>
                     </tfoot>
                   </table>
